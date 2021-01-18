@@ -16,44 +16,41 @@ const Items = [
         image: Image1,
         title: "salkdjsadjlska",
     },
-
+    {
+        image: Image1,
+        title: "salkdjsadjlska",
+    },
 ]
 function AppFeature() {
 
     return (
         <div id = "card" className="block aboutBlock">
             <div className="container-fluid">
-                <div className="titleHolder">
-                    <h2>Key Features and Benefits</h2>
-                    <p>Obcaecati consequatur libero repudiandae, aperiam itaque laborum!</p>
+                <div className="contentHolder">
+                    <h2>OUR TEAM</h2>
+                    <p>Meet the awesome people behind our wall</p>
                 </div>
-
+           
                 <Row gutter={[16, 16]}>
+                
                     {Items.map(item => {
                         return (
-                            <Col span={8} >  <Card
+                            <Col span={6} > 
+                             <Card
                                 hoverable
-                              
-                                cover={<img alt="example" src={item.image} />}
+                                cover={<img className="comment-customer" alt="example" src={item.image} />}
                             >
+                                <div className="content">
                                 <Meta title="Europe Street beat" description="www.instagram.com" />
-                            </Card>,</Col>
+                                </div>
+                            </Card>,
+                               {/* <img className="comment-customer" src={item.image} /> */}
+                            </Col>
                         );
                     })}
+                
                 </Row>
-                <Row gutter={[16, 16]}>
-                    {Items.map(item => {
-                        return (
-                            <Col span={8} >  <Card
-                                hoverable
-                              
-                                cover={<img alt="example" src={item.image} />}
-                            >
-                                <Meta title="Europe Street beat" description="www.instagram.com" />
-                            </Card>,</Col>
-                        );
-                    })}
-                </Row>
+               
             </div>
         </div>
     );

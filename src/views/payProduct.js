@@ -1,6 +1,6 @@
 import React from 'react'
 import Appheader from '../component/common/header';
-import { Layout, Tag, Space, Table, Button, Pagination, notification } from 'antd';
+import { Layout, Space, Table, Button } from 'antd';
 import AppFooter from '../component/common/footer';
 const { Header, Content, Footer } = Layout;
 
@@ -75,10 +75,11 @@ function payProduct() {
                     <div className="container-fluid">
                         <div className="contentHolder">
                             <h1>Confirm Payment Product</h1>
+                            <Table columns={columns} dataSource={data} />
+                            Tổng tiền: 
                         </div>
-                        <Table columns={columns} dataSource={data} />
-                        <br></br>
                         <div className="confirmPayment">
+                            
                             <Button type="primary" href="processPayment" size="large" danger>Payment Confirm</Button>
                         </div>
                     </div>

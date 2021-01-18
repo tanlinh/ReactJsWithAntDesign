@@ -1,31 +1,55 @@
 import React from 'react';
-import { Collapse } from 'antd';
-const { Panel } = Collapse;
-
-function callback(key) {
-    console.log(key);
-}
+import { Carousel } from 'antd';
+import Image1 from '../../assets/images/advanced-option.jpg';
 function AppAskQuestion() {
-    const text = `
-    A dog is a type of domesticated animal.`;
+
+    const Items = [
+        {
+            image: Image1,
+            key: '1',
+            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            title: 'Maria Perez',
+            contentcomment: 'Web Master',
+        },
+        {
+            image: Image1,
+            key: '1',
+            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            title: 'Maria Perez',
+            contentcomment: 'Web Master',
+        },
+        {
+            image: Image1,
+            key: '1',
+            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            title: 'Maria Perez',
+            contentcomment: 'Web Master',
+        }
+    ]
     return (
-        <div id = "collapse" className="block aboutBlock">
-            <div className="container-fluid">
-                <div className="contentHolder">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Quidem reiciendis iure, aperiam blanditiis. Alias esse, nam, ea quam</p>
-                </div>
-                <Collapse defaultActiveKey={['1']} onChange={callback}>
-                    <Panel header="This is panel header 1" key="1">
-                        <p>{text}</p>
-                    </Panel>
-                    <Panel header="This is panel header 2" key="2">
-                        <p>{text}</p>
-                    </Panel>
-                    <Panel header="This is panel header 3" key="3">
-                        <p>{text}</p>
-                    </Panel>
-                </Collapse>,
+        <div className="comment">
+            <div id="collapse" className="block aboutBlock ">
+                <div className="container-fluid">
+                    <div className="contentHolder">
+                        <h2>WHAT OUR CLIENTS SAY</h2>
+                        <p>See what they are saying about us</p>
+                    </div>
+                    <Carousel autoplay>
+                        {Items.map(item => {
+                            return (
+                              
+                                    <div className="content">
+                                    <img className="comment-customer" src={item.image} />
+                                        <br></br>
+                                        <p>{item.comment}</p>
+                                        <h3>{item.title}</h3>
+                                        <p>{item.contentcomment}</p>
+                                    </div>
+                                
+                            );
+                        })}
+                    </Carousel>,
+            </div>
             </div>
         </div>
     );

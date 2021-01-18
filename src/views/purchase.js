@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from 'react';
+
 import Appheader from '../component/common/header';
 import { Layout, Button, Row, Col, Card, Pagination, notification } from 'antd';
 import AppFooter from '../component/common/footer';
 import Image from '../assets/images/bg-works.jpg';
 
-//set pagiantion
-// const [currentPage, setCurrentPage] = useState(1);
-// const [postsPerPage] = useState(10);
-// const indexOfLastPost = currentPage * postsPerPage;
-// const indexOfFirstPost = indexOfLastPost - postsPerPage;
-// const paginate = pageNumber => setCurrentPage(pageNumber);
-//end set pagiantion
 
 const openNotification = () => {
     notification.open({
@@ -116,7 +109,7 @@ function AppPurchase() {
                                     </Col>
                                 )
                             })}
-                            <Pagination defaultCurrent={6} total={500} />
+                            <Pagination defaultCurrent={6} total={100} />
                         </Row>
                     </div>
                 </div>

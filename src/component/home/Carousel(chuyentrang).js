@@ -5,6 +5,7 @@ function AppHero() {
 
     const Items = [
         {
+
             key: '1',
             title: 'Key Features and Benefits',
             content: 'Key Features and Benefits',
@@ -23,7 +24,7 @@ function AppHero() {
 
     return (
         <div id = "carousel" className="heroBlock">
-            <Carousel>
+            <Carousel autoplay>
                 {Items.map(item => {
                     return (
                         <div key={item.key} className="container-fluid">
@@ -31,12 +32,12 @@ function AppHero() {
                                 <h3>{item.title}</h3>
                                 <p>{item.content}</p>
                                 <div className = "btnHolder">
-                                    <Button type="primary" size="large">Primary Button</Button>
-                                    <Button>Default Button</Button>
+                                    <Button type="primary" href="purchase" size="large">READ MORE</Button>
+                                    {/* <Button>Default Button</Button>
                                     <Button type="dashed">Dashed Button</Button>
                                     <Button type="text">Text Button</Button>
                                     <Button type="link">Link Button</Button>
-                                    <Button type="primary" size="large"> <i class="fab fa-google"></i> Primary Button</Button>
+                                    <Button type="primary" size="large"> <i class="fab fa-google"></i> Primary Button</Button> */}
                                 </div>
                             </div>
                         </div>
